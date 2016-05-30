@@ -4,10 +4,10 @@ angular.module('ngClassifieds', ['ngMaterial', 'ui.router'])
 			.primaryPalette('teal')
 			.accentPalette('orange');
 
-		$stateProvider
+		/*$stateProvider
 			.state('classifieds', {
 				url: '/classifieds',
 				templateUrl: 'components/classifieds/classifieds.tpl.html',
 				controller: 'classifiedsCtrl as vm'
-			});
+			});*/
 	});

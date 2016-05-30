@@ -4,8 +4,8 @@
 		.module("ngClassifieds")
 		.controller("classifiedsCtrl", function($scope, $http, classifiedsFactory, $mdSidenav, $mdToast, $mdDialog) {
 			
-			classifiedsFactory.getClassifieds().then(function(AOB) {
-					$scope.classifieds = AOB.data;
+			classifiedsFactory.getClassifieds().then(function(classifieds) {
+					$scope.classifieds = classifieds.data;
 					$scope.categories = getCategories($scope.classifieds);
 			});
 					var contact = {
@@ -37,6 +37,7 @@
 						return _.uniq(categories);
 					}
 					$scope.saveClassified = function(classified) {
+						var obj = classified;
 						if(classified) {
 							$scope.contact = contact;
 							$scope.classifieds.push(classified);
