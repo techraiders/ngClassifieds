@@ -4,10 +4,18 @@ angular.module('ngClassifieds', ['ngMaterial', 'ui.router'])
 			.primaryPalette('teal')
 			.accentPalette('orange');
 
-		/*$stateProvider
-			.state('classifieds', {
-				url: '/classifieds',
-				templateUrl: 'components/classifieds/classifieds.tpl.html',
-				controller: 'classifiedsCtrl as vm'
-			});*/
+		$stateProvider
+			.state('one', {
+				url: '/stateone',
+				template: '<h1> {{stateone.message}}</h1>',
+				controller: 'stateOneCtrl as stateone'
+			})
+			.state('two', {
+				url: '/statetwo',
+				template: '<h1>State Two</h1>' 
+			});
+	}).
+	controller('stateOneCtrl', function() {
+		var vm = this;
+		vm.message = "Hey from state one";
 	});
