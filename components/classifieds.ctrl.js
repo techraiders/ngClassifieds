@@ -46,7 +46,7 @@
 					};
 					$scope.editClassified = function(classified) {
 						$scope.editing = true;
-						openSidebar();
+						$scope.openSidebar();
 						$scope.classified = classified;
 					};
 					$scope.deleteClassified = function(event, classified) {
