@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> ngClassifieds</title>
+	<link rel="stylesheet" type="text/css" href="node_modules/angular-material/angular-material.css"/>
+	<link rel="stylesheet" type="text/css" href="node_modules/mdi/css/materialdesignicons.min.css" media="all"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body ng-app="ngClassifieds" ng-controller="classifiedsCtrl">
+
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<p><strong>ngClassifieds</strong></p>
+			<md-button ng-click="openSidebar()">
+				<md-icon class="mdi mdi-plus-circle"></md-icon>
+			New Classified
+			</md-button>
+			<md-button ng-click="showFilters=true">
+				<md-icon class="mdi mdi-magnify"></md-icon>
+			Filter
+			</md-button>
+		</div>
+	</md-toolbar>
+
+	<div class="filters" layout="row" layout-align="center center" ng-show="showFilters">
+		<md-input-container>
+			<label>Enter Search Term</label>
+			<input type="text" ng-model="classifiedsFilter">
+		</md-input-container>
+
+		<md-input-container>
+			<label>Category</label>
+			<md-select ng-model="category">
+				<md-option ng-repeat="category in categories" value="{{ category }}">
+					{{ category }}
+				</md-option>
+			</md-select>
+		</md-input-container>
+		<md-input-container>
+			<md-button class="md-warn"
+				ng-click="classifiedsFilter = ''; category = ''">
+					Clear
+			</md-button>
+		</md-input-container>
+	</div>
+
+	<p id="new">I was tesing saving changes to local file. </p>
+
+	<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+		<md-toolbar>
+			<h1 class="md-toolbar-tools">Add a new classified</h1>
+		</md-toolbar>
+
+		<md-content layout-padding>
+			<form>
+				<md-input-container>
+					<label for="title">Title</label>
+					<input type="text" id="title" ng-model="classified.title" md-autofocus>
+				</md-input-container>
+				<md-input-container>
+					<label for="price">Price</label>
+					<input type="text" id="price" ng-model="classified.price">
+				</md-input-container>
+				<md-input-container>
+					<label for="description"> Description</label>
+					<textarea type="text" id="description" ng-model="classified.description"></textarea>
+				</md-input-container>
+				<md-input-container>
+					<label for="image">Image Link</label>
+					<input type="text" id="image" ng-model="classified.image">
+				</md-input-container>
+				<md-input-container>
+					<md-button class="md-primary" ng-if="!editing" ng-click="saveClassified(classified)"> Save
+					</md-button>
+					<md-button class="md-primary" ng-if="editing" ng-click="saveEdit()">Save Edit
+					</md-button>
+					<md-button class="md-warn" ng-click="closeSidebar()">Cancel
+					</md-button>
+				</md-input-container>
+			</form>
+		</md-content>
+
+		<!-- <pre>{{classified | json}}</pre> -->
+
+	</md-sidenav>
+
+<ui-view></ui-view>
+
+<script type="text/javascript" src="node_modules//angular/angular.js"></script>
+<script type="text/javascript" src="node_modules/angular-animate/angular-animate.js"></script>
+<script type="text/javascript" src="node_modules/angular-aria/angular-aria.js"></script>
+<script type="text/javascript" src="node_modules/angular-material/angular-material.js"></script>
+<script type="text/javascript" src="scripts/app.js"></script>
+<script type="text/javascript" src="components/classifieds.ctrl.js"></script>
+<script type="text/javascript" src="components/classifieds.fac.js"></script>
+<script type="text/javascript" src="node_modules/lodash/lodash.min.js"></script>
+<script type="text/javascript" src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+<noscript>Please enable JavaScript in your browser</noscript>
+</body>
+</html>

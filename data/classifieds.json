@@ -1,0 +1,73 @@
+[
+	{
+		"id":"1",
+		"title": "First Item",
+		"price": 6000,
+		"posted":"2015-10-24",
+		"contact": {
+			"name":"John Doe",
+			"phone":"9876543210",
+			"email":"abc@gmail.com"
+		},
+		"description": "This includes Vehicles and Parts accessories",
+		"categories":[
+			"Vehicles",
+			"Parts and Accessories"
+		],
+		"image":"Tulips.jpg",
+		"views":213
+	},
+	{
+		"id":"2",
+		"title": "Second Item",
+		"price": 6000,
+		"posted":"2015-10-24",
+		"contact": {
+			"name":"John Doe",
+			"phone":"9876543210",
+			"email":"abc@gmail.com"
+		},
+		"description": "This includes electronics and computer accessories",
+		"categories":[
+			"Elecetronics",
+			"Computers and Accessories"
+		],
+		"image":"Tulips.jpg",
+		"views":213
+	},
+	{
+		"id":"3",
+		"title": "Third Item",
+		"price": 6000,
+		"posted":"2015-10-24",
+		"contact": {
+			"name":"John Doe",
+			"phone":"9876543210",
+			"email":"abc@gmail.com"
+		},
+		"description": "This includes top wear, bottom wear, and foot wear",
+		"categories":[
+			"Clothings"
+		],
+		"image":"Tulips.jpg",
+		"views":213
+	},
+	{
+		"id":"4",
+		"title": "Fourth Item",
+		"price": 6000,
+		"posted":"2015-10-24",
+		"contact": {
+			"name":"John Doe",
+			"phone":"9876543210",
+			"email":"abc@gmail.com"
+		},
+		"description": "This is the first classified item. Its price is written above, and description is mentioned below.",
+		"categories":[
+			"Vehicles",
+			"Parts and Accessories"
+		],
+		"image":"Tulips.jpg",
+		"views":213
+	}
+]
